@@ -1,0 +1,16 @@
+FROM openjdk:17-jdk-alpine
+COPY target/chatnotification-service-0.0.1-SNAPSHOT.jar .
+EXPOSE 8085
+ENV EUREKA_HOST=service-registry
+ENTRYPOINT ["java", "-jar", "chatnotification-service-0.0.1-SNAPSHOT.jar"]
+
+
+ARG MYSQL_HOST
+ARG MYSQL_PORT
+ARG MYSQL_USER
+ARG MYSQL_PASSWORD
+
+ENV MYSQL_HOST=${MYSQL_HOST}
+ENV MYSQL_PORT=${MYSQL_PORT}
+ENV MYSQL_USER=${MYSQL_USER}
+ENV MYSQL_PASSWORD=${MYSQL_PASSWORD}
