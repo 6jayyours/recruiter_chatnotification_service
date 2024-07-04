@@ -67,7 +67,7 @@ public class ChatController {
         return new ResponseEntity<>(imageBytes, headers, HttpStatus.OK);
     }
 
-    @GetMapping("/receivers/{senderId}")
+    @GetMapping("/api/ws/receivers/{senderId}")
     public ResponseEntity<List<Integer>> findDistinctReceiverIdsBySenderId(@PathVariable Integer senderId) {
         List<Integer> receiverIds = chatService.findDistinctReceiverIdsBySenderId(senderId);
         return ResponseEntity.ok(receiverIds);
