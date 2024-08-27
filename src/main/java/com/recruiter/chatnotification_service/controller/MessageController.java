@@ -20,7 +20,7 @@ public class MessageController {
     @GetMapping("/publish")
     public ResponseEntity<String> sendMessage(@RequestParam("message") String message){
         producer.sendMessage(message);
-        return ResponseEntity.ok("Message send to rabbitmq");
+        return ResponseEntity.ok("Message send to rabbitmq.");
 
     }
 
